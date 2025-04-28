@@ -14,13 +14,14 @@ func() {
 	fi
 	for file in "$cur"/*;
 		do if [ -f  "$file" ];
-			then  name=$(basename "$file")
+			then  init_name=$(basename "$file")
+			final_name="$init_name"
 			count=1
-			while  [ -f "$output_dir/$name" ];
-				do name="${name%.*}_$count.${name##*.}"
+			while  [ -f "$output_dir/$final_name" ];
+				do final_name="${init_name%.*}_$count.${init_name##*.}"
 				count=$((count + 1))
 			done
-			cp "$file" "$output_dir/$name"
+			cp "$file" "$output_dir/$final_name"
 		elif [ -d "$file" ];
 			then func "$file" $((cur_depth + 1)) 
 		fi
