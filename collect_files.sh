@@ -23,7 +23,7 @@ func() {
 			cp "$file" "$output_dir/$name"
 		else;
 			then func "$file" $((cur_depth + 1)) 
-`		fi
+		fi
 	done
 }
 
