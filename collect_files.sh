@@ -16,7 +16,7 @@ func() {
 		do if [ -f  "$file" ];
 			then  name=$(basename "$file")
 			count=1
-			while  [ -e "$output_dir/$name" ];
+			while  [ -f "$output_dir/$name" ];
 				do name="${name%.*}_$count.${name##*.}"
 				count=$((count + 1))
 			done
