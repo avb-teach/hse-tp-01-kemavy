@@ -21,8 +21,8 @@ func() {
 				count=$((count + 1))
 			done
 			cp "$file" "$output_dir/$name"
-		elif [ -d "$file" ];
-			then func "$file" $((cur_depth + 1)) 
+		else
+			func "$file" $((cur_depth + 1)) 
 		fi
 	done
 }
